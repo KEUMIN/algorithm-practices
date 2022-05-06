@@ -22,6 +22,7 @@ public class GoodNum {
             int start = 0;
             int end = num - 1;
 
+            // 투 포인터 알고리즘 - 외우자!
             while (start < end) {
                 if (arr[start] + arr[end] == find) {
                     if (start != i && end != i) {
