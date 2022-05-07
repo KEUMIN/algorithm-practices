@@ -3,6 +3,7 @@ package algorithm;
 import java.io.*;
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.StringTokenizer;
 
 public class MinVal {
@@ -14,8 +15,10 @@ public class MinVal {
         int L = Integer.parseInt(st.nextToken());
         st = new StringTokenizer(br.readLine());
         Deque<Node> mydeque = new LinkedList<>();
+
         for (int i = 0; i < N; i++) {
             int now = Integer.parseInt(st.nextToken());
+            // 새로운 값이 들어올 때마다 정렬 대신 현재 수보다 큰 값을 덱에서 제거해 시간 복잡도를 줄임
             while (!mydeque.isEmpty() && mydeque.getLast().value > now) {
                 mydeque.removeLast();
             }
