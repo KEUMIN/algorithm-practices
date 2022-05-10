@@ -16,8 +16,10 @@ public class DFSPractice {
         StringTokenizer st = new StringTokenizer(br.readLine());
         int N = Integer.parseInt(st.nextToken());
         int M = Integer.parseInt(st.nextToken());
+        
         A = new ArrayList[N + 1];
         V = new boolean[N + 1];
+        // 인접 리스트 생성
         for (int i = 1; i < N + 1; i++) {
             A[i] = new ArrayList<Integer>();
         }
@@ -28,6 +30,7 @@ public class DFSPractice {
             A[s].add(e);
             A[e].add(s);
         }
+        // 원하는 결과값
         int count = 0;
         for (int i = 1; i < N + 1; i++) {
             if (!V[i]) {
@@ -35,6 +38,7 @@ public class DFSPractice {
                 DFS(i);
             }
         }
+        System.out.println(count);
     }
 
     private static void DFS(int i) {
@@ -43,7 +47,7 @@ public class DFSPractice {
         }
         V[i] = true;
         for (int num : A[i]) {
-            if (V[i] == false) {
+            if (V[num] == false) {
                 DFS(num);
             }
         }
