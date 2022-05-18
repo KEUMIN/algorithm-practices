@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class LCS {
     private static long[][] DP;
@@ -13,6 +14,7 @@ public class LCS {
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+//        Scanner scanner = new Scanner(System.in);
         A = br.readLine().toCharArray();
         B = br.readLine().toCharArray();
         DP = new long[A.length + 1][B.length + 1];
