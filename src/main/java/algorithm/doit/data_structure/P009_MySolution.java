@@ -39,7 +39,7 @@ public class P009_MySolution {
     public void check(int a) {
     	switch(a) {
     	case 'A' :
-//    		M[0] = M[0] - 1;
+
     	}
     }
 }
