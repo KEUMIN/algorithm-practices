@@ -18,16 +18,28 @@ public class P009_MySolution {
             A[i] = str.charAt(i);
         }
         int[] D = new int[4];
+        int[] M = new int[4];
         st = new StringTokenizer(br.readLine());
         for (int i = 0; i < D.length; i++) {
             D[i] = Integer.parseInt(st.nextToken());
+            M[i] = D[i];
         }
 
         int start = 0;
         int end = 0;
         while (end != (S - 1) || start != (S - P)) {
-
+        	if (end <= P - 1) {
+				
+			} else if (end > P - 1) {
+				
+			}
         }
 
+    }
+    public void check(int a) {
+    	switch(a) {
+    	case 'A' :
+
+    	}
     }
 }
