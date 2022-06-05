@@ -1,3 +1,6 @@
 # Project exclude paths
 /target/
 *.xml
+*.classpath
+*.project
+*.class
