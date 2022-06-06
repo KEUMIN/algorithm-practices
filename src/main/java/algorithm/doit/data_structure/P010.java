@@ -3,19 +3,31 @@ package algorithm.doit.data_structure;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Deque;
+import java.util.LinkedList;
 import java.util.StringTokenizer;
 
 public class P010{
 	private static int[] A;
 	public static void main(String[] args) throws IOException {
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		int N = Integer.parseInt(br.readLine());
-		int L = Integer.parseInt(br.readLine());
-		
 		StringTokenizer st = new StringTokenizer(br.readLine());
-		A = new int[N];
+		
+		int N = Integer.parseInt(st.nextToken());
+		int L = Integer.parseInt(st.nextToken());
+		st = new StringTokenizer(br.readLine());
+		Deque<Node> myDeque = new LinkedList<>();
 		for (int i = 0; i < N; i++) {
-			A[i] = Integer.parseInt(st.nextToken());
+			
+		}
+	}
+	static class Node {
+		public int value;
+		public int index;
+		
+		public Node(int value, int index) {
+			this.value = value;
+			this.index = index;
 		}
 	}
 }
