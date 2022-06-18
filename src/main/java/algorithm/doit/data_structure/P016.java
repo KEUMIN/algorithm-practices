@@ -11,7 +11,7 @@ public class P016 {
 		mData[] A = new mData[N];
 		for (int i = 1; i < N; i++) {
 			int x = scanner.nextInt();
-			A[i] = new mData(x, i);
+//			A[i] = new mData(x, i);
 		}
 		
 		Arrays.sort(A);
