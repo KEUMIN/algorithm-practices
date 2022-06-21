@@ -3,8 +3,11 @@ package algorithm.doit.data_structure;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.security.PublicKey;
 import java.util.Arrays;
 import java.util.StringTokenizer;
+
+import javax.swing.text.StyleContext.SmallAttributeSet;
 
 public class P019 {
 	public static void main(String[] args) throws IOException{
@@ -20,14 +23,32 @@ public class P019 {
 		for (int i = 1; i <= N; i++) {
 			A[i] = Integer.parseInt(st.nextToken());
 		}
-		Arrays.stream(A).forEach(System.out::print);
 		
-		int tmp = A[K];
-		A[K] = A[1];
-		A[1] = tmp;
 		
-		int start = 1;
-		int end = N;
-		
+	}
+	
+	public static int partition(int[] A, int S, int E) {
+		int M = (S + E) / 2;
+		swap(A, S, M);
+		int pivot = A[S];
+		int i = S, j = E;
+		while (i < j) {
+			while (pivot < A[j]) {
+				j--;
+			}
+			while (i < j && pivot >= A[i]) {
+				i++;
+			}
+			swap(A, i, j);
+		}
+		A[S] = A[i];
+		A[i] = pivot;
+		return i;
+	}
+	
+	public static void swap(int[] A, int i, int j) {
+		int temp = A[i];
+		A[i] = A[j];
+		A[j] = temp;
 	}
 }
