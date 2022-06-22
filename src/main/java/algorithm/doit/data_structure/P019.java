@@ -27,6 +27,19 @@ public class P019 {
 		
 	}
 	
+	public static void quickSort(int[] A, int S, int E, int K) {
+		if (S < E) {
+			int pivot = partition(A, S, E);
+			if (pivot == K) {
+				return;
+			} else if (K < pivot) {
+				quickSort(A, S, pivot - 1, K);
+			} else {
+				quickSort(A, pivot + 1, E, K);
+			}
+		}
+	}
+	
 	public static int partition(int[] A, int S, int E) {
 		int M = (S + E) / 2;
 		swap(A, S, M);
