@@ -27,5 +27,24 @@ public class P023 {
             A[e].add(s);
         }
         int count = 0;
+        for (int i = 1; i < N + 1; i++) {
+            if (!visited[i]) {
+                count++;
+                DFS(i);
+            }
+        }
+        System.out.println(count);
+    }
+
+    static void DFS(int v) {
+        if (visited[v]) {
+            return;
+        }
+        visited[v] = true;
+        for (int i : A[v]) {
+            if (visited[v] == false) {
+                DFS(i);
+            }
+        }
     }
 }
